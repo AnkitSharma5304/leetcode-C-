@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Event Listener Playground</title>
+  <style>
+    body {
+      font-family: sans-serif;
+      padding: 20px;
+    }
+    button {
+      padding: 10px 20px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+    input {
+      padding: 8px;
+      font-size: 16px;
+    }
+    .box {
+      width: 150px;
+      height: 150px;
+      background-color: lightblue;
+      margin-top: 20px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      transition: background-color 0.3s;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>🎮 Event Listener Playground</h1>
+
+  <!-- Click Event -->
+  <button id="clickBtn">Click Me</button>
+  <p id="clickResult"></p>
+
+  <!-- Input Event -->
+  <input type="text" id="nameInput" placeholder="Type your name here">
+  <p id="liveOutput"></p>
+
+  <!-- Mouseover Event -->
+  <div class="box" id="hoverBox">Hover Me</div>
+
+  <script>
+    // Click Event
+    let clicked = false;
+
+clickBtn.addEventListener("click", () => {
+  if (clicked === false) {
+    clickResult.textContent = "✅ You clicked the button!";
+    clicked = true;
+  } else {
+    clickResult.textContent = "";
+    clicked = false;
+  }
+});
+
+
+    // Input Event
+    const nameInput = document.querySelector("#nameInput");
+    const liveOutput = document.querySelector("#liveOutput");
+
+    nameInput.addEventListener("input", () => {
+      liveOutput.textContent = "Hello, " + nameInput.value + "!";
+    });
+
+    // Mouseover Event
+    const hoverBox = document.querySelector("#hoverBox");
+
+    hoverBox.addEventListener("mouseover", () => {
+      hoverBox.style.backgroundColor = "lightgreen";
+      hoverBox.textContent = "You're hovering!";
+    });
+
+    hoverBox.addEventListener("mouseout", () => {
+      hoverBox.style.backgroundColor = "lightblue";
+      hoverBox.textContent = "Hover Me";
+    });
+  </script>
+
+</body>
+</html>

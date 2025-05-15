@@ -1,0 +1,19 @@
+The line cout << fixed << setprecision(2) << ans << endl; is used to control the format of the output in C++. Let's break it down:
+
+fixed:
+
+The fixed manipulator ensures that the output is in fixed-point notation. This means that the number will be displayed with a fixed number of decimal places, rather than in scientific notation (e.g., 1.23 instead of 1.23e+00).
+setprecision(2):
+
+The setprecision manipulator sets the number of digits to display after the decimal point. In this case, setprecision(2) means that two digits will be shown after the decimal point. For example, 12.345 would be displayed as 12.35.
+<< ans << endl;:
+
+This part prints the value of ans to the standard output, followed by a newline character (endl). The endl also flushes the output buffer, ensuring that the output is displayed immediately.
+Putting it all together, cout << fixed << setprecision(2) << ans << endl; ensures that the value of ans is printed to the screen with exactly two decimal places, in fixed-point notation, and followed by a newline.
+
+Example
+If ans is 36.005:
+
+Without formatting: cout << ans; would print 36.005
+With formatting: cout << fixed << setprecision(2) << ans; would print 36.01
+This line is particularly useful for displaying financial or scientific data where a specific number of decimal places is required.

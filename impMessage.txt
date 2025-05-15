@@ -1,0 +1,9 @@
+In C++, the .size() method of a standard container (such as std::vector) returns a value of type size_t, which is an unsigned integer type. When you use size_t in certain contexts, especially where comparison or arithmetic operations with signed integers (like int) are involved, you may encounter issues such as warnings or unintended behavior due to type mismatches.
+
+Here's why you might want to explicitly cast size_t to int:
+
+Type Compatibility: k is an int, and tom.size() returns a size_t. To ensure that the types are compatible in arithmetic operations and comparisons, you explicitly cast tom.size() to int.
+
+Preventing Warnings: Casting prevents warnings that the compiler might generate due to mixing signed and unsigned types.
+
+Correct Behavior in Comparisons: In rare cases where the size of the container could theoretically exceed the range of an int, this could lead to incorrect comparisons. However, in practical competitive programming scenarios, such extreme cases are uncommon.

@@ -1,0 +1,1 @@
+In the push_back example, the string is constructed first and then copied or moved into the vector. In contrast, with emplace_back, the string is constructed directly within the vector's storage, which can be more efficient.

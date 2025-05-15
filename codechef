@@ -1,0 +1,24 @@
+The issue with this code lies in the usage of % operator with a floating-point number. The % operator is only defined for integer operands. Hence, you cannot use % with floating-point numbers. Instead, you can check if the fractional part of the number is very close to zero.
+
+Here's the corrected version:
+
+cpp
+Copy code
+#include <bits/stdc++.h>
+using namespace std;
+
+int main() {
+    int t1;
+    cin >> t1;
+    while (t1--) {
+        int x, y;
+        cin >> x >> y;
+        float t = (10 * y - x * 10) / static_cast<float>(100 - y); // Ensuring floating-point division
+        if (abs(t - static_cast<int>(t)) < 1e-6) { // Checking if the fractional part is very close to zero
+            cout << t << endl;
+        } else {
+            cout << floor(t) + 1 << endl;
+        }
+    }
+    return 0;
+}
